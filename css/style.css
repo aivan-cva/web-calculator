@@ -1,4 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Niconne&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tektur:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Niconne&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tektur:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Niconne&family=Orbitron:wght@400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tektur:wght@400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --light-blue: #bfecff;
+  --blue-secondary: #c5d3e8;
+  --light-purple: #cdc1ff;
+  --light-pink: #ffccea;
+  --light-yellow: #fcf596;
+  --light-green: #7ed4ad;
+  --orange: #f87a53;
+}
 
 * {
   padding: 0;
@@ -9,21 +21,126 @@
 .calc-container {
   display: flex;
   flex-direction: column;
-  width: 700px;
-  margin: 0 auto;
+  width: 400px;
+  margin: 70px auto;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid black;
+  background-color: var(--light-blue);
+  box-shadow: 10px 10px;
+}
+
+.sun-panel {
+  padding: 8px;
+  display: flex;
+  margin: 8px 0;
+  justify-content: end;
+}
+
+.panel {
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  background-color: #80a1c1;
 }
 
 .screen {
-  font-family: "Tektur", sans-serif;
+  font-family: "Orbitron", sans-serif;
+  font-size: 42px;
+  border: 1px solid black;
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  text-align: right;
+  background-color: white;
+  font-weight: 800;
 }
 
 .buttons-container {
   display: flex;
+  padding: 8px;
+  justify-content: center;
+  margin: 16px 0;
 }
 
 .left-buttons,
-.numbers-container,
-.operands-container {
+.numbers-container {
   display: flex;
   flex-direction: column;
+}
+
+.left-buttons {
+  display: flex;
+  .c,
+  .backspace {
+    background-color: var(--light-pink);
+  }
+
+  .c:hover,
+  .backspace:hover {
+    background-color: #d7bcc8;
+  }
+
+  .ac {
+    background-color: var(--orange);
+    border-radius: 16px;
+    flex-grow: 1;
+  }
+
+  .ac:hover {
+    background-color: #ba3f1d;
+  }
+}
+
+.numbers-container {
+  .btn {
+    background-color: var(--light-purple);
+  }
+  .btn:hover {
+    background-color: #9fa0c3;
+  }
+}
+
+.operands-container {
+  display: flex;
+}
+
+.operands-left,
+.operands-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.operands-left {
+  .btn {
+    background-color: var(--light-green);
+  }
+  .btn:hover {
+    background-color: #96be8c;
+  }
+}
+
+.operands-right {
+  display: flex;
+
+  .btn {
+    background-color: var(--light-yellow);
+    border-radius: 16px;
+    flex-grow: 1;
+  }
+
+  .btn:hover {
+    background-color: #eee3ab;
+  }
+}
+
+.btn {
+  font-family: "Chakra Petch", sans-serif;
+  border: 2px solid black;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 4px;
+  font-size: 16px;
+  font-weight: 800;
 }
