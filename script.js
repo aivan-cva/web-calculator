@@ -86,6 +86,28 @@ const handle_input = (input) => {
         return operation;
       }
 
+      if (input.value == "C") {
+        if (operation.firtsNum && operation.operand && operation.lastNum) {
+          operation.lastNum = operation.lastNum.slice(0, -1);
+          updateScreen(operation);
+          return operation;
+        }
+
+        if (operation.firtsNum && operation.operand) {
+          operation.operand = "";
+          updateScreen(operation);
+          return operation;
+        }
+
+        if (operation.firtsNum) {
+          operation.firtsNum = operation.firtsNum.slice(0, -1);
+          updateScreen(operation);
+          return operation;
+        }
+        updateScreen(operation);
+        return operation;
+      }
+
     case "equal":
       if (operation.firtsNum && !operation.operand && !operation.lastNum) {
         updateScreen(operation);
@@ -130,6 +152,9 @@ const clearOperation = () => {
 };
 
 const updateScreen = ({ firtsNum, operand, lastNum }) => {
+  if (firtsNum == "") {
+    firtsNum == "0";
+  }
   if (lastNum == "0") {
     lastNum = "";
   }
